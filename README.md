@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Portafolio Personal
 
-## Getting Started
+Portafolio digital moderno desarrollado con tecnologías de vanguardia para mostrar mis proyectos, experimentos y aprendizajes en desarrollo web y mobile.
 
-First, run the development server:
+## ✨ Características
+
+- 🎨 **Diseño moderno** con gradientes y animaciones suaves
+- ⚡ **Tecnologías de vanguardia**: Next.js 15, React 19, Tailwind CSS v4
+- 🎭 **Animaciones fluidas** con Framer Motion
+- 📱 **Diseño responsive** que se adapta a cualquier dispositivo
+- 🎯 **Componentes reutilizables** y arquitectura escalable
+- 🌙 **Tema personalizado** con variables CSS
+
+## 🛠️ Tecnologías Utilizadas
+
+- **Framework**: Next.js 15 con App Router
+- **Frontend**: React 19, TypeScript
+- **Estilos**: Tailwind CSS v4
+- **Animaciones**: Framer Motion
+- **Iconos**: Lucide React
+- **Componentes**: Radix UI
+- **Deployment**: Vercel
+
+## 🚀 Instalación y Desarrollo
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/guillermoandres98/portafolio.git
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Scripts Disponibles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Servidor de desarrollo
+- `npm run build` - Construcción para producción
+- `npm run start` - Servidor de producción
+- `npm run lint` - Linter de código
 
-## Learn More
+## 🌐 Deployment
 
-To learn more about Next.js, take a look at the following resources:
+El proyecto está optimizado para deployment en [Vercel](https://vercel.com):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/guillermoandres98/portafolio)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Estructura del Proyecto
 
-## Deploy on Vercel
+```
+src/
+├── app/                 # App Router de Next.js
+├── components/
+│   ├── ui/             # Componentes reutilizables
+│   └── sections/       # Secciones de la página
+├── lib/                # Utilidades y helpers
+├── types/              # Tipos TypeScript
+├── hooks/              # Custom hooks
+└── utils/              # Funciones auxiliares
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Personalización
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Para personalizar el portafolio:
+
+1. **Contenido**: Edita los textos en `src/components/sections/hero.tsx`
+2. **Colores**: Modifica las variables CSS en `src/app/globals.css`
+3. **Metadatos**: Actualiza la información en `src/app/layout.tsx`
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 🤝 Contribuciones
+
+Las contribuciones son bienvenidas. Siéntete libre de abrir un issue o pull request.
+
+---
+
+Desarrollado con ❤️ por [Guillermo Andrés](https://github.com/guillermoandres98)
