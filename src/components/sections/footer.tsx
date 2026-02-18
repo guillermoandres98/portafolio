@@ -12,8 +12,8 @@ const links = [
 export default function Footer() {
   return (
     <footer className="relative z-10 border-t border-border/60 bg-background/80 py-8 sm:py-10">
-      <div className="container mx-auto flex flex-col items-center justify-between gap-5 px-4 sm:flex-row sm:px-6">
-        <p className="text-center text-sm text-muted-foreground sm:text-left">
+      <div className="container mx-auto flex min-w-0 flex-col items-center justify-between gap-5 px-3 sm:flex-row sm:px-4 md:px-6">
+        <p className="text-center text-xs text-muted-foreground sm:text-left sm:text-sm break-words">
           © {new Date().getFullYear()} Guillermo Fuentes. Todos los derechos reservados.
         </p>
         <nav
@@ -24,7 +24,7 @@ export default function Footer() {
             <a
               key={href}
               href={href}
-              className="text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded"
+              className="min-h-[44px] min-w-[44px] touch-manipulation flex items-center justify-center text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded sm:min-w-0 sm:justify-start sm:py-2"
             >
               {label}
             </a>

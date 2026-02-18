@@ -9,20 +9,27 @@ const skills: { name: string; slug: TechSlug }[] = [
   { name: "CSS", slug: "css" },
   { name: "JavaScript", slug: "javascript" },
   { name: "TypeScript", slug: "typescript" },
-  { name: "React / Next.js", slug: "react" },
+  { name: "React", slug: "react" },
+  { name: "Next.js", slug: "nextjs" },
   { name: "Node.js", slug: "node" },
   { name: "MySQL", slug: "mysql" },
   { name: "SQL Server", slug: "sql-server" },
+  { name: "PostgreSQL", slug: "postgresql" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "MariaDB", slug: "mariadb" },
   { name: "C#", slug: "csharp" },
+  { name: ".NET", slug: "dotnet" },
   { name: "Tailwind", slug: "tailwind" },
   { name: "Bootstrap", slug: "bootstrap" },
+  { name: "Laravel", slug: "laravel" },
+  { name: "Angular", slug: "angular" },
 ];
 
 export default function About() {
   return (
     <section
       id="sobre-mi"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
+      className="section-stripe relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
     >
       {/* Fondo futurista: orbes y partículas animadas */}
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden>
@@ -65,14 +72,14 @@ export default function About() {
         ))}
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+      <div className="container relative z-10 mx-auto min-w-0 px-3 sm:px-4 md:px-6">
         <div className="text-center">
           <motion.h2
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={transitionSmooth}
-            className="text-2xl font-bold text-foreground sm:text-3xl md:text-4xl"
+            className="text-xl font-bold text-foreground sm:text-2xl md:text-3xl lg:text-4xl"
           >
             Sobre mí
           </motion.h2>
@@ -94,7 +101,7 @@ export default function About() {
             transition={{ ...transitionSmooth, delay: 0.05 }}
             className="flex justify-center md:justify-start"
           >
-            <div className="h-40 w-40 rounded-2xl border border-primary/25 bg-card/80 backdrop-blur-sm flex items-center justify-center overflow-hidden sm:h-48 sm:w-48 card-premium">
+            <div className="h-32 w-32 rounded-2xl border border-primary/25 bg-card/80 backdrop-blur-sm flex items-center justify-center overflow-hidden sm:h-40 sm:w-40 md:h-48 md:w-48 card-premium shrink-0">
               <span className="text-5xl sm:text-6xl" aria-hidden>👨‍💻</span>
             </div>
           </motion.div>
@@ -137,7 +144,7 @@ export default function About() {
           <p className="mb-4 text-center text-sm text-muted-foreground sm:mb-5">
             Tecnologías con las que trabajo
           </p>
-          <div className="mx-auto grid max-w-2xl grid-cols-2 justify-items-center gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4">
+          <div className="mx-auto grid max-w-2xl grid-cols-2 min-w-0 justify-items-center gap-2 sm:gap-3 sm:grid-cols-3 md:gap-4 md:grid-cols-4">
             {skills.map((skill, i) => (
               <motion.div
                 key={skill.name}
@@ -146,7 +153,7 @@ export default function About() {
                 viewport={viewportOnce}
                 transition={{ duration: 0.35, delay: 0.04 * i, ease: [0.22, 0.61, 0.36, 1] }}
                 whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
-                className="card-premium flex w-full max-w-[10rem] items-center justify-center gap-2 px-4 py-2.5 text-center text-xs font-medium text-foreground sm:max-w-none sm:px-5 sm:py-3 sm:text-sm"
+                className="card-premium flex w-full min-w-0 min-h-[44px] items-center justify-center gap-1.5 px-3 py-2.5 text-center text-xs font-medium text-foreground break-words sm:gap-2 sm:px-4 sm:py-3 sm:text-sm touch-manipulation"
               >
                 <TechIcon name={skill.slug} className="shrink-0 text-primary/90" />
                 <span>{skill.name}</span>

@@ -32,17 +32,17 @@ export default function Hardware() {
   return (
     <section
       id="hardware"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
+      className="section-stripe relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
     >
       <SectionFuturisticBg />
-      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+      <div className="container relative z-10 mx-auto min-w-0 px-3 sm:px-4 md:px-6">
         <div className="text-center">
           <motion.h2
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={transitionSmooth}
-            className="text-2xl font-bold text-foreground sm:text-3xl md:text-4xl"
+            className="text-xl font-bold text-foreground break-words sm:text-2xl md:text-3xl lg:text-4xl"
           >
             Hardware{" "}
             <span className="text-primary">& Soporte TI</span>
@@ -76,7 +76,7 @@ export default function Hardware() {
               viewport={viewportOnce}
               transition={{ duration: 0.45, delay: 0.06 * i, ease: [0.22, 0.61, 0.36, 1] }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="card-premium p-4 sm:p-6"
+              className="card-premium min-w-0 p-4 sm:p-6"
             >
               <div className="flex items-center gap-3">
                 <div className="rounded-xl border border-primary/25 bg-primary/10 p-2.5 shrink-0">
@@ -88,7 +88,7 @@ export default function Hardware() {
                 {items.map((item, j) => (
                   <li
                     key={j}
-                    className="flex items-start gap-2 text-xs text-muted-foreground sm:text-sm"
+                    className="flex items-start gap-2 text-xs text-muted-foreground sm:text-sm break-words min-w-0"
                   >
                     <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
                     {item}

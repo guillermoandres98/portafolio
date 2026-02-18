@@ -70,14 +70,14 @@ export default function Projects() {
       className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
     >
       <SectionFuturisticBg />
-      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+      <div className="container relative z-10 mx-auto min-w-0 px-3 sm:px-4 md:px-6">
         <div className="text-center">
           <motion.h2
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={transitionSmooth}
-            className="text-2xl font-bold text-foreground sm:text-3xl md:text-4xl"
+            className="text-xl font-bold text-foreground break-words sm:text-2xl md:text-3xl lg:text-4xl"
           >
             Mis Proyectos
           </motion.h2>
@@ -109,7 +109,7 @@ export default function Projects() {
               viewport={viewportOnce}
               transition={{ duration: 0.45, delay: 0.05 * i, ease: [0.22, 0.61, 0.36, 1] }}
               whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="card-premium flex flex-col overflow-hidden"
+              className="card-premium flex min-w-0 flex-col overflow-hidden"
             >
               <div className="flex h-32 items-center justify-center border-b border-border/50 bg-muted/20 sm:h-40">
                 {project.comingSoon ? (
@@ -121,10 +121,10 @@ export default function Projects() {
                 )}
               </div>
               <div className="flex flex-1 flex-col p-4 sm:p-5">
-                <h3 className="font-semibold text-foreground text-sm sm:text-base">
+                <h3 className="font-semibold text-foreground text-sm break-words sm:text-base">
                   {project.title}
                 </h3>
-                <p className="mt-1.5 flex-1 text-xs text-muted-foreground sm:mt-2 sm:text-sm">
+                <p className="mt-1.5 flex-1 text-xs text-muted-foreground break-words sm:mt-2 sm:text-sm">
                   {project.description}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1.5 sm:mt-4 sm:gap-2">
@@ -140,7 +140,7 @@ export default function Projects() {
                 <div className="mt-3 flex flex-wrap gap-2 sm:mt-4 sm:gap-3">
                   <motion.a
                     href={project.demoUrl}
-                    className="inline-flex items-center gap-1.5 rounded-xl border border-primary bg-primary/10 px-3 py-2 text-xs font-medium text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:gap-2 sm:px-4 sm:text-sm"
+                    className="inline-flex min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center gap-1.5 rounded-xl border border-primary bg-primary/10 px-3 py-2 text-xs font-medium text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:min-w-0 sm:gap-2 sm:px-4 sm:text-sm"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.15 }}
@@ -150,7 +150,7 @@ export default function Projects() {
                   </motion.a>
                   <motion.a
                     href={project.codeUrl}
-                    className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-muted/40 px-3 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:gap-2 sm:px-4 sm:text-sm"
+                    className="inline-flex min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center gap-1.5 rounded-xl border border-border bg-muted/40 px-3 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:min-w-0 sm:gap-2 sm:px-4 sm:text-sm"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.15 }}

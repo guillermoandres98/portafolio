@@ -15,17 +15,17 @@ export default function Contact() {
   return (
     <section
       id="contacto"
-      className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
+      className="section-stripe relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
     >
       <SectionFuturisticBg />
-      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+      <div className="container relative z-10 mx-auto min-w-0 px-3 sm:px-4 md:px-6">
         <div className="text-center">
           <motion.h2
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={transitionSmooth}
-            className="text-2xl font-bold text-foreground sm:text-3xl md:text-4xl"
+            className="text-xl font-bold text-foreground break-words sm:text-2xl md:text-3xl lg:text-4xl"
           >
             Contáctame
           </motion.h2>
@@ -69,7 +69,7 @@ export default function Contact() {
                 id="name"
                 type="text"
                 placeholder="Tu nombre"
-                className="input-focus mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:mt-2 min-h-[2.75rem]"
+                className="input-focus mt-1.5 w-full min-w-0 rounded-xl border border-input bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:mt-2 min-h-[44px]"
               />
             </div>
             <div>
@@ -83,7 +83,7 @@ export default function Contact() {
                 id="email"
                 type="email"
                 placeholder="tu@email.com"
-                className="input-focus mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:mt-2 min-h-[2.75rem]"
+                className="input-focus mt-1.5 w-full min-w-0 rounded-xl border border-input bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:mt-2 min-h-[44px]"
               />
             </div>
             <div>
@@ -97,7 +97,7 @@ export default function Contact() {
                 id="phone"
                 type="tel"
                 placeholder="Ej: +56 9 1234 5678"
-                className="input-focus mt-1.5 w-full rounded-xl border border-input bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:mt-2 min-h-[2.75rem]"
+                className="input-focus mt-1.5 w-full min-w-0 rounded-xl border border-input bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:mt-2 min-h-[44px]"
               />
             </div>
             <div>
@@ -111,12 +111,12 @@ export default function Contact() {
                 id="message"
                 rows={4}
                 placeholder="Tu mensaje..."
-                className="input-focus mt-1.5 w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:mt-2 min-h-[6rem]"
+                className="input-focus mt-1.5 w-full min-w-0 resize-none rounded-xl border border-input bg-background px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary sm:mt-2 min-h-[6rem]"
               />
             </div>
             <motion.button
               type="submit"
-              className="btn-shine w-full rounded-xl border border-primary bg-primary/10 py-3 font-medium text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 min-h-[2.75rem]"
+              className="btn-shine btn-primary-light w-full rounded-xl border border-primary bg-primary/10 py-3 font-medium text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 min-h-[44px] touch-manipulation"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.99 }}
               transition={{ duration: 0.2 }}
@@ -143,7 +143,7 @@ export default function Contact() {
                   </div>
                   <div className="min-w-0">
                     <p className="text-xs text-muted-foreground">{label}</p>
-                    <p className="truncate text-sm font-medium text-foreground sm:text-base">{value}</p>
+                    <p className="break-words text-sm font-medium text-foreground sm:text-base">{value}</p>
                   </div>
                 </li>
               ))}
@@ -155,14 +155,14 @@ export default function Contact() {
               <a
                 href="#"
                 aria-label="GitHub"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/60 text-muted-foreground transition-colors duration-200 hover:border-primary/30 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                className="flex min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center rounded-xl border border-border/60 text-muted-foreground transition-colors duration-200 hover:border-primary/30 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
                 href="#"
                 aria-label="LinkedIn"
-                className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/60 text-muted-foreground transition-colors duration-200 hover:border-primary/30 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                className="flex min-h-[44px] min-w-[44px] touch-manipulation items-center justify-center rounded-xl border border-border/60 text-muted-foreground transition-colors duration-200 hover:border-primary/30 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <Linkedin className="h-5 w-5" />
               </a>

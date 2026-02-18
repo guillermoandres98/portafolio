@@ -39,14 +39,14 @@ export default function Certificates() {
       className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden"
     >
       <SectionFuturisticBg />
-      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+      <div className="container relative z-10 mx-auto min-w-0 px-3 sm:px-4 md:px-6">
         <div className="text-center">
           <motion.h2
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={transitionSmooth}
-            className="text-2xl font-bold text-foreground sm:text-3xl md:text-4xl"
+            className="text-xl font-bold text-foreground break-words sm:text-2xl md:text-3xl lg:text-4xl"
           >
             Certificados & Formación
           </motion.h2>
@@ -144,7 +144,7 @@ export default function Certificates() {
               </p>
               <motion.a
                 href={item.link}
-                className="mt-4 inline-flex items-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2.5 text-sm font-medium text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                className="mt-4 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-2.5 text-sm font-medium text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 touch-manipulation"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.15 }}

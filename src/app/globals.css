@@ -1,7 +1,155 @@
 @import "tailwindcss";
 
+/* Modo claro (por defecto cuando no hay .dark) — premium, profundidad, jerarquía */
 :root {
-  /* Futurista: fondo oscuro frío, acentos cyan/violeta */
+  --background: #f1f5f9;
+  --foreground: #0c1222;
+  --card: #ffffff;
+  --card-foreground: #0c1222;
+  --popover: #ffffff;
+  --popover-foreground: #0c1222;
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+  --secondary: rgba(8, 145, 178, 0.1);
+  --secondary-foreground: #0e7490;
+  --muted: rgba(15, 23, 42, 0.06);
+  --muted-foreground: #475569;
+  --accent: rgba(99, 102, 241, 0.1);
+  --accent-foreground: #4338ca;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: rgba(15, 23, 42, 0.14);
+  --input: rgba(15, 23, 42, 0.1);
+  --ring: #0891b2;
+  --radius: 0.5rem;
+  --glow: 0 0 24px rgba(8, 145, 178, 0.15);
+  --glow-strong: 0 0 32px rgba(8, 145, 178, 0.25);
+  /* Sombras suaves (modo claro) */
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 4px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px -2px rgba(15, 23, 42, 0.06), 0 10px 20px -4px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.08), 0 20px 40px -8px rgba(15, 23, 42, 0.1);
+  --shadow-xl: 0 24px 48px -12px rgba(15, 23, 42, 0.12);
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.04), 0 6px 16px rgba(15, 23, 42, 0.06);
+  --shadow-card-hover: 0 8px 24px -4px rgba(8, 145, 178, 0.12), 0 20px 40px -8px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(8, 145, 178, 0.08);
+  /* Decoración y utilidades (modo claro) */
+  --grid-line: rgba(15, 23, 42, 0.04);
+  --gradient-spot: rgba(8, 145, 178, 0.04);
+  --scrollbar-thumb: rgba(15, 23, 42, 0.2);
+  --scrollbar-thumb-hover: rgba(15, 23, 42, 0.35);
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --card-premium-bg: #ffffff;
+  --card-premium-shadow: var(--shadow-card);
+  --card-premium-hover-shadow: var(--shadow-card-hover);
+  --card-premium-border: rgba(15, 23, 42, 0.08);
+  --section-divider-mid: rgba(15, 23, 42, 0.12);
+  --section-divider-side: rgba(15, 23, 42, 0.06);
+  --hover-lift-shadow: var(--shadow-card-hover);
+  --focus-ring: rgba(8, 145, 178, 0.55);
+  --pulse-glow-1: 0 0 20px rgba(8, 145, 178, 0.18);
+  --pulse-glow-2: 0 0 35px rgba(8, 145, 178, 0.3);
+  --input-focus-border: rgba(8, 145, 178, 0.5);
+  --input-focus-ring: rgba(8, 145, 178, 0.2);
+  /* Secciones: fondo elevado (blanco) para diferenciar del fondo principal */
+  --section-stripe: #ffffff;
+  /* Hover estados más claros */
+  --hover-bg-subtle: rgba(8, 145, 178, 0.06);
+  --hover-bg-strong: rgba(8, 145, 178, 0.12);
+  --btn-outline-hover-bg: rgba(8, 145, 178, 0.08);
+}
+
+/* Secciones con fondo elevado (solo modo claro): diferenciación clara del fondo principal */
+.section-stripe {
+  background: var(--section-stripe);
+  box-shadow: 0 1px 0 0 rgba(15, 23, 42, 0.04);
+}
+.dark .section-stripe {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Botón CTA principal (modo claro): más presencia y profundidad */
+.btn-primary-light {
+  background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%) !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(8, 145, 178, 0.15) !important;
+  transition: box-shadow 0.25s ease, transform 0.2s ease !important;
+}
+.btn-primary-light:hover {
+  color: #ffffff !important;
+  box-shadow: 0 8px 24px -4px rgba(8, 145, 178, 0.35), 0 0 0 1px rgba(8, 145, 178, 0.2) !important;
+  transform: translateY(-1px);
+}
+.btn-primary-light:active {
+  transform: translateY(0);
+}
+.btn-primary-light svg {
+  color: inherit !important;
+}
+.dark .btn-primary-light {
+  background: revert !important;
+  color: revert !important;
+  box-shadow: revert !important;
+  transform: revert !important;
+}
+.dark .btn-primary-light:hover {
+  color: revert !important;
+  box-shadow: revert !important;
+  transform: revert !important;
+}
+.dark .btn-primary-light svg {
+  color: revert !important;
+}
+
+/* Botón outline (Contacto, secundarios): hover más claro en modo claro */
+.btn-outline-light {
+  background: var(--card) !important;
+  border-color: var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease !important;
+}
+.btn-outline-light:hover {
+  background: var(--btn-outline-hover-bg) !important;
+  border-color: rgba(8, 145, 178, 0.35) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+.dark .btn-outline-light {
+  background: revert !important;
+  border-color: revert !important;
+  box-shadow: revert !important;
+}
+.dark .btn-outline-light:hover {
+  background: revert !important;
+  border-color: revert !important;
+  box-shadow: revert !important;
+}
+
+/* Nav links: hover más visible en modo claro */
+.nav-link-light:hover {
+  background: var(--hover-bg-subtle) !important;
+}
+.dark .nav-link-light:hover {
+  background: revert !important;
+}
+
+/* Hero subtitle: en modo claro color teal sólido (legible, sin gradiente/brillo) */
+.hero-subtitle {
+  color: #0e7490 !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  text-shadow: none !important;
+}
+.dark .hero-subtitle {
+  color: transparent !important;
+  background: linear-gradient(90deg, var(--primary), rgba(34, 211, 238, 0.9), var(--primary)) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  text-shadow: none !important;
+}
+
+/* Modo oscuro (next-themes añade .dark al html) */
+.dark {
   --background: #06060a;
   --foreground: #f0f4f8;
   --card: rgba(15, 23, 42, 0.6);
@@ -21,10 +169,26 @@
   --border: rgba(34, 211, 238, 0.2);
   --input: rgba(34, 211, 238, 0.15);
   --ring: #22d3ee;
-  --radius: 0.5rem;
-  /* Glow para efectos neón */
   --glow: 0 0 20px rgba(34, 211, 238, 0.35);
   --glow-strong: 0 0 30px rgba(34, 211, 238, 0.5);
+  /* Decoración y utilidades (modo oscuro) */
+  --grid-line: rgba(34, 211, 238, 0.03);
+  --gradient-spot: rgba(34, 211, 238, 0.08);
+  --scrollbar-thumb: rgba(34, 211, 238, 0.3);
+  --scrollbar-thumb-hover: rgba(34, 211, 238, 0.5);
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --card-premium-bg: rgba(15, 23, 42, 0.5);
+  --card-premium-shadow: none;
+  --card-premium-hover-shadow: 0 12px 40px -12px rgba(34, 211, 238, 0.2), 0 0 0 1px rgba(34, 211, 238, 0.1);
+  --section-divider-mid: rgba(34, 211, 238, 0.25);
+  --section-divider-side: rgba(34, 211, 238, 0.15);
+  --hover-lift-shadow: 0 12px 40px -12px rgba(34, 211, 238, 0.2);
+  --focus-ring: rgba(34, 211, 238, 0.6);
+  --pulse-glow-1: 0 0 20px rgba(34, 211, 238, 0.35);
+  --pulse-glow-2: 0 0 35px rgba(34, 211, 238, 0.55);
+  --input-focus-border: rgba(34, 211, 238, 0.5);
+  --input-focus-ring: rgba(34, 211, 238, 0.15);
+  --card-premium-border: var(--border);
 }
 
 @theme inline {
@@ -55,9 +219,13 @@
   border-color: var(--border);
 }
 
+/* Responsive base: sin scroll horizontal, contenido adaptable desde 320px */
 html {
   scroll-behavior: smooth;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  overflow-x: hidden;
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -68,6 +236,7 @@ html {
   .animate-float,
   .animate-float-slow,
   .animate-twinkle,
+  .animate-scroll-line,
   body::before {
     animation: none !important;
   }
@@ -81,6 +250,15 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+/* Contenedor principal: no desbordar viewport */
+main {
+  max-width: 100vw;
+  overflow-x: hidden;
+  min-width: 0;
 }
 
 /* Fondo con grid sutil (estilo blueprint/terminal) + pulso */
@@ -89,8 +267,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(34, 211, 238, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 60px 60px;
   pointer-events: none;
   z-index: -1;
@@ -102,7 +280,7 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 238, 0.08), transparent 50%);
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, var(--gradient-spot), transparent 50%);
   pointer-events: none;
   z-index: -1;
 }
@@ -117,25 +295,25 @@ body::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(34, 211, 238, 0.3);
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 211, 238, 0.5);
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* Utilidades para glow y bordes neón */
 .glow-text {
-  text-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
+  text-shadow: 0 0 30px color-mix(in srgb, var(--primary) 40%, transparent);
 }
 
 .glow-border {
-  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.3), var(--glow);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--primary) 30%, transparent), var(--glow);
 }
 
 .glass {
-  background: rgba(15, 23, 42, 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -153,8 +331,8 @@ a, button {
 
 /* Glow pulsante en texto neón */
 @keyframes glow-pulse {
-  0%, 100% { filter: drop-shadow(0 0 20px rgba(34, 211, 238, 0.35)); }
-  50% { filter: drop-shadow(0 0 35px rgba(34, 211, 238, 0.55)); }
+  0%, 100% { filter: drop-shadow(var(--pulse-glow-1)); }
+  50% { filter: drop-shadow(var(--pulse-glow-2)); }
 }
 
 .animate-glow-pulse {
@@ -202,13 +380,23 @@ a, button {
   animation: twinkle 2.5s ease-in-out infinite;
 }
 
+/* Línea del indicador Scroll (fluir suave) */
+@keyframes scroll-line {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-scroll-line {
+  animation: scroll-line 2s ease-in-out infinite;
+}
+
 /* Hover lift para cards */
 .hover-lift {
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
 }
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px -12px rgba(34, 211, 238, 0.2);
+  box-shadow: var(--hover-lift-shadow);
 }
 
 /* Botón con ripple sutil */
@@ -267,22 +455,22 @@ a, button {
   transition: border-color 0.2s ease, box-shadow 0.2s ease, outline 0.2s ease;
 }
 .input-focus:focus {
-  border-color: rgba(34, 211, 238, 0.5);
-  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 3px var(--input-focus-ring);
 }
 .input-focus:focus-visible {
-  outline: 2px solid rgba(34, 211, 238, 0.6);
+  outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
 
 /* Focus visible para accesibilidad (teclado) */
 :focus-visible {
-  outline: 2px solid rgba(34, 211, 238, 0.6);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid rgba(34, 211, 238, 0.6);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -292,29 +480,40 @@ a:focus-visible {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(34, 211, 238, 0.15) 20%,
-    rgba(34, 211, 238, 0.25) 50%,
-    rgba(34, 211, 238, 0.15) 80%,
+    var(--section-divider-side) 20%,
+    var(--section-divider-mid) 50%,
+    var(--section-divider-side) 80%,
     transparent 100%
   );
   margin: 0;
   border: none;
 }
 
-/* Card premium: glassmorphism + hover */
+/* Card premium: sombra en reposo + hover con más profundidad */
 .card-premium {
   border-radius: 1rem;
-  border: 1px solid var(--border);
-  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--card-premium-border);
+  background: var(--card-premium-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--card-premium-shadow);
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.25s ease,
     border-color 0.2s ease;
 }
 .card-premium:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px -12px rgba(34, 211, 238, 0.2),
-    0 0 0 1px rgba(34, 211, 238, 0.1);
-  border-color: rgba(34, 211, 238, 0.25);
+  box-shadow: var(--card-premium-hover-shadow);
+  border-color: rgba(8, 145, 178, 0.15);
+}
+.dark .card-premium:hover {
+  border-color: color-mix(in srgb, var(--primary) 25%, transparent);
+}
+
+/* Nav links: hover más claro en modo claro */
+.nav-link-light:hover {
+  background: var(--hover-bg-subtle);
+}
+.dark .nav-link-light:hover {
+  background: revert;
 }

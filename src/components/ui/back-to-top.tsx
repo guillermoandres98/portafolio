@@ -23,7 +23,7 @@ export default function BackToTop() {
         <motion.a
           href="#inicio"
           aria-label="Volver arriba"
-          className="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/30 bg-background/90 text-primary shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:bottom-8 md:right-8 md:h-12 md:w-12"
+          className="fixed bottom-4 right-4 z-40 flex min-h-[44px] min-w-[44px] items-center justify-center rounded-xl border border-primary/30 bg-background/90 text-primary shadow-lg backdrop-blur-sm transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background touch-manipulation md:bottom-8 md:right-8 md:h-12 md:w-12"
           initial={{ opacity: 0, y: 12, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 12, scale: 0.9 }}
