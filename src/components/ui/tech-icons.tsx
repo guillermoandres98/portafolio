@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const size = 20;
 
 /** Mapa slug → archivo SVG en public/icons (tema oscuro: preferir variantes light donde existan) */
@@ -36,7 +38,7 @@ export function TechIcon({ name, className, size: customSize = size }: TechIconP
   const filename = iconPaths[name];
   if (!filename) return null;
   return (
-    <img
+    <Image
       src={`/icons/${filename}`}
       alt=""
       width={customSize}
